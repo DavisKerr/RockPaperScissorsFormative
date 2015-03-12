@@ -49,6 +49,7 @@ public class RPSPanel extends JPanel
 		tieInfo = new JLabel("Ties: ");
 		quitButton = new Button("Quit");
 		
+		
 		setupLayout();
 		setupPanel();
 		setupListeners();
@@ -75,9 +76,22 @@ public class RPSPanel extends JPanel
 					computerResults.setText(computerChoice);
 					String result = compareChoices(computerChoice);
 					winResults.setText(result);
+					playerInput.setText("");
 				}
 			}
-
+			
+		});
+		
+		quitButton.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent click)
+			{
+				
+				JOptionPane.showMessageDialog(null, "Wins: " + wins + " Losses: " + losses + " Ties: " + tie);
+				baseController.quit();
+				
+			}
 			
 		});
 		
@@ -110,6 +124,8 @@ public class RPSPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, loseInfo, 127, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, loseInfo, 183, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, loseInfo, 281, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, quitButton, 37, SpringLayout.SOUTH, instructions);
+		baseLayout.putConstraint(SpringLayout.WEST, quitButton, 0, SpringLayout.WEST, playerResults);
 	}
 
 	private void setupPanel()

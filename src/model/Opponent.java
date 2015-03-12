@@ -25,15 +25,15 @@ public class Opponent
 	{
 		String selection = "";
 		
-		if(choice == 0 /*&& lastNum != 0*/)
+		if(choice == 0)
 		{
 			selection = "R";
 		}
-		else if(choice == 1 /*&& lastNum != 1*/)
+		else if(choice == 1)
 		{
 			selection = "P";
 		}
-		else if(choice == 2 /*&& lastNum != 2*/)
+		else if(choice == 2)
 		{
 			selection = "S";
 		}

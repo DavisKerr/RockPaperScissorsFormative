@@ -24,5 +24,9 @@ public class RPSController
 		return baseOpponent;
 	}
 	
+	public void quit()
+	{
+		System.exit(0);
+	}
 	
 }
